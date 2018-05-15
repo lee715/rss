@@ -10,6 +10,7 @@ sneaky('ay', function () {
 + package.json
 + app.js
 + socket.js
++ yarn.lock
 - *
 `
   this.after('yarn && pm2 restart sock')

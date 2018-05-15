@@ -207,5 +207,7 @@ class SockAgent {
   }
 
   record (msg) {
+    console.log('record', msg)
+    pubRedis.setex(`devices:status:${msg.uid}`, 2 * 60, msg.status)
   }
 }

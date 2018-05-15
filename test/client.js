@@ -4,7 +4,10 @@ const net = require('net')
 module.exports = class Client {
   constructor (uid) {
     this.uid = uid
-    this.c = net.createConnection({port: config.sockport || 7000}, () => {
+    this.c = net.createConnection({
+      port: config.sockport || 7000,
+      host: '47.74.252.32'
+    }, () => {
       this.sayOk()
     })
     this.c.on('data', (data) => {
